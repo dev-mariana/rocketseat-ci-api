@@ -52,3 +52,17 @@ jobs:
         run: |
           docker build -t $REGISTRY/rocketseat-ci:$TAG .
           docker push $REGISTRY/rocketseat-ci:$TAG
+          IMAGE=$(echo $GITHUB_SHA/rocketseat-ci:$TAG)
+          echo "image=$IMAGE" >> $GITHUB_OUTPUT
+
+      - name: Deploy to APP Runner
+        id: build-docker-image
+        uses: awslabs/amazon-app-runner-deploy@main
+        with:
+          service: rocketseat-api
+          image: ${{ steps.build-docker-image.outputs.image }}
+          access-role-arn: arn:aws:iam::598602257739:role/app-runner-role
+          region: us-east-2
+          cpu: 1
+          memory: 1
+          port: 3000
