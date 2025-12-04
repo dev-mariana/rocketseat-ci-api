@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/dev-mariana/rocketseat-ci-api/compare/v1.0.1...v1.0.2) (2025-12-04)
+
+
+### Bug Fixes
+
+* ci variables ([b404de0](https://github.com/dev-mariana/rocketseat-ci-api/commit/b404de0d2b97e308f308a8469e1c51111a2b50ec))
+
 ## [1.0.1](https://github.com/dev-mariana/rocketseat-ci-api/compare/v1.0.0...v1.0.1) (2025-12-02)
 
 
